@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prodify - Calendario</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/tabellastyle.css">
+  <link rel="icon" href="../immagini/prodifyicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+<div class="pagina">
+    <div class="bordo bordo-left"></div>
+    <div class="bordo bordo-right"></div>
+   
+
+<!-- Header caricato dinamicamente -->
+<script src="../js/navbar.js"></script>
+<script>generaHeader();</script>
+
+
+
+  <main class="home-main">
+    <div class="calendar-container">
+      <section class="hero">
+        <h2 class="titoloServizi">Calendario Prodify</h2>
+        <p style="text-align: center;">Organizza i tuoi impegni giorno per giorno.</p>
+      </section>
+  <div class="calendar-flex">
+      <div class="card">
+        <div class="calendar-toolbar">
+          <button class="prev month-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="current-month"></div>
+          <button class="next month-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div class="calendar">    
+        <div class="weekdays">
+          <div class="weekday-name">Lu</div>
+          <div class="weekday-name">Ma</div>
+          <div class="weekday-name">Me</div>
+          <div class="weekday-name">Gi</div>
+          <div class="weekday-name">Ve</div>
+          <div class="weekday-name">Sa</div>
+          <div class="weekday-name">Do</div>
+        </div>
+        <div class="calendar-days"></div>
+        </div>
+
+        <div class="goto-buttons">
+          <button type="button" class="btn prev-year">Anno Precedente</button>
+          <button type="button" class="btn today">Oggi</button>
+          <button type="button" class="btn next-year">Anno Successivo</button>
+        </div>
+      </div>
+      <div id="dettagliEvento" class="hero">
+          <h3>Dettagli del giorno selezionato:</h3>
+          <p><strong>Data:</strong> <span id="dataSelezionata">—</span></p>
+          <p><strong>Orario:</strong> <span id="orarioEvento">—</span></p>
+          <p><strong>Evento:</strong> <span id="testoEvento">—</span></p>
+
+          <form id="modificaEvento" style="margin-top: 20px;">
+            <label>Orario: <input type="time" id="inputOrario"></label><br><br>
+            <label>Evento: <input type="text" id="inputTesto" placeholder="Scrivi l’impegno..."></label><br><br>
+            <label>Colore evidenziazione:
+              <input type="color" id="inputColore" value="#ffe066">
+            </label><br><br>
+
+            <button type="submit">Salva evento</button>
+            <button type="button" id="eliminaEvento" style="margin-left: 10px; background-color: #e63946;">Elimina evento</button>
+          </form>
+
+        </div>
+      </div>
+    <section class="task-list">
+
+      <button id="esportaPDF" class="btn" style="margin-bottom: 1rem;">Esporta in PDF</button>
+
+      <div id="contenutoDaEsportare" style="font-family: Arial, sans-serif; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <h2 style="margin: 0; font-size: 1.5rem;">Prodify – Attività programmate</h2>
+        </div>
+      
+        <table id="tabellaAttivita" style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Ora</th>
+              <th>Impegno</th>
+              <th>Colore</th>
+              <th>Completato</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Prodify</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+
+  <div class="orologi-overlay orologi-left"></div>
+<div class="orologi-overlay orologi-right"></div>
+  </div>
+  </body>
+</html>
+
+
+
+
+<script>
+    // Evidenzia automaticamente il link della pagina attuale
+    const links = document.querySelectorAll('.voceMenu');
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+  
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+const linkPage = href ? href.toLowerCase() : "";
+
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+  
