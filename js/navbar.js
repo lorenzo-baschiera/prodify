@@ -7,7 +7,7 @@ function generaHeader() {
           <h1 id="titolo">Prodify</h1>
         </div>
         <nav id="menu">
-          <a class="voceMenu" href="Home.html">Home</a>
+          <a class="voceMenu" href="index.html">Home</a>
           <a class="voceMenu" href="servizi.html">Servizi</a>
           <a class="voceMenu" href="calendario.html">Calendario</a>
           <span id="loginStatus" style="margin-left: auto; display: flex; gap: 10px; align-items: center;"></span>
