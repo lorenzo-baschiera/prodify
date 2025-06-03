@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background:
+    radial-gradient(circle, #b7e4c7 0%, #40916c 100%),
+    url("../immagini/bordo.png") left top repeat-y,
+    url("../immagini/bordo.png") right top repeat-y;
+  background-size: auto, 80px auto, 80px auto; /* primo è per il gradient */
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.pagina {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina {
+  flex: 1; /* prende tutto lo spazio disponibile */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* forza il contenuto a riempire lo spazio */
+}
+
+footer {
+  background-color: #ccc; /* esempio */
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* I bordi */
+.bordo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  background-repeat: repeat-y;
+  background-size: contain;
+  z-index: 0; /* dietro navbar & contenuti */
+  pointer-events: none;
+}
+
+.bordo-left {
+  left: 0;
+  background-image: url("../immagini/bordo.png");
+}
+
+.bordo-right {
+  right: 0;
+  background-image: url("../immagini/bordo.png");
+}
+
+/* Navbar e contenuti */
+header, main, footer {
+  position: relative;
+  z-index: 1; /* sopra i bordi */
+}
+
+/* Header */
+.main-header {
+  background-color: rgb(19, 77, 41);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+#titolo {
+  color: white;
+  padding-left: 20px;
+}
+
+.pagineMenu {
+  justify-content: space-between;
+}
+#menu {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+#benvenuto{
+  padding-bottom: 30px;
+  font-size: 30pt;
+  font-family: "Quicksand", sans-serif;
+}
+
+#menuTitolo{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  width: 100%;
+}
+#logoTitolo{
+  display: flex;
+  text-align: right;
+  align-items: center;
+}
+
+.titoloServizi{
+  font-family: "Quicksand", sans-serif;
+  font-size: 30pt;s
+  text-align: center;
+  padding: 15px;
+}
+
+.voceMenu {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.voceMenu.active {
+  font-weight: bold;
+  /*text-decoration: underline;*/
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* Main content */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Hero sections */
+.hero {
+  text-align: left;
+}
+
+/* Pulsanti principali */
+.cta-button {
+  background-color: #40916c;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #26734d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.riquadroContenuto{
+  padding-top: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ccc;
+  padding: 30px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16pt;
+}
+
+#riquadroContenuto ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+  padding-bottom: 15px;
+  width: 700px;
+}
+
+#titoloTabella{
+  padding-bottom: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+
+#contenutoDaEsportare td, 
+#contenutoDaEsportare th {
+  padding: 8px;
+  font-size: 14px;
+}
+
+#contenutoDaEsportare h2 {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 1.5rem;
+}
+
+
+
+
+.voceMenu {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 8px;
+  background-color: #40916c;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.voceMenu:hover {
+  background-color: #26734d;
+  transform: scale(1.05);
+}
+
+.voceMenu.active {
+  background-color: #1b4332;
+  color: #fff;
+  pointer-events: none;
+}
+
+
+
+
+.orologi-left, .orologi-right {
+  position: fixed;
+  top: 0;
+  bottom: 60px; /* lascia spazio al footer */
+  width: 140px;
+  pointer-events: none; /* per non interferire con click */
+  z-index: 10;
+}
+
+.orologi-left {
+  left: 0;
+}
+
+.orologi-right {
+  right: 0;
+}
+
+.orologi-left img, .orologi-right img {
+  position: absolute;
+  width: 80px; /* dimensione immagine */
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.8; /* leggermente trasparente */
+}
+
+
+.citazioni-tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.citazione-tempo {
+  background: #f0f0f0;
+  border-left: 6px solid #40916c;
+  padding: 20px 25px;
+  font-style: italic;
+  color: #2f4f4f;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.citazione-tempo blockquote {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.citazione-tempo footer {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: 600;
+  color: #40916c;
+  font-style: normal;
+}
+
+
+footer {
+  margin: 10px 15px 15px 15px; /* margine sopra e laterale */
+  border-radius: 10px;
+  background-color: rgb(19, 77, 41);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-family: "Quicksand", sans-serif;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+
+#testoEvento {
+  display: inline-block; /* permette di vedere bene lo sfondo */
+  padding: 4px 8px;      /* un po’ di padding per evidenziare */
+  border-radius: 6px;    /* arrotonda un po’ gli angoli */
+  background-color: transparent !important; /* rimuovi qualsiasi colore fisso */
+  transition: background-color 0.3s ease;
+}

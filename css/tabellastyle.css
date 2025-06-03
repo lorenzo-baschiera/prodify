@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Layout calendario */
+.calendar-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Card calendario */
+.card {
+  width: 380px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ccc;
+  padding-bottom: 20px;
+}
+
+/* Toolbar sopra il calendario */
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.calendar-toolbar .current-month {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Pulsanti di navigazione */
+.calendar-toolbar button {
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 2px;
+}
+
+.calendar-toolbar button:hover {
+  background-color: #d4d4d4;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Griglia giorni */
+.weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px 18px;
+}
+
+
+
+.weekday-name,
+.month-day,
+.padding-day {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 1px;
+  font-weight: 500;
+  border-radius: 10px;
+  
+}
+
+.weekday-name {
+  font-weight: bold;
+  color: #444;
+}
+
+
+
+.month-day {
+  color: #222;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.month-day:hover {
+  background-color: #e0e0e0;
+}
+
+.current-day {
+  background-color: rgb(19, 90, 1);
+  color: white;
+  font-weight: bold;
+}
+
+/* Bottoni "Oggi", "Anno Precedente", "Anno Successivo" */
+.goto-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+
+.btn {
+  background-color: #40916c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  background-color: #26734d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.has-event {
+  background-color: #ffe066;
+  color: #000;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+
+#dettagliEvento {
+  margin-top: 30px;
+  background-color: #e9f5ec;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+#dettagliEvento input[type="text"],
+#dettagliEvento input[type="time"] {
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+#dettagliEvento button {
+  background-color: #40916c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#dettagliEvento button:hover {
+  background-color: #26734d;
+}
+
+#dettagliEvento input[type="color"] {
+  width: 60px;
+  height: 35px;
+  padding: 0;
+  border: none;
+}
+
+#eliminaEvento {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* Pulsante Salva */
+#modificaEvento button[type="submit"]:hover {
+  background-color: #26734d;  /* colore più scuro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* aura più marcata */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Pulsante Elimina */
+#eliminaEvento:hover {
+  background-color: #aa0d0d !important; /* colore più scuro rosso */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* stessa aura */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+.inactive {
+  color: #bbb;
+  background-color: transparent;
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.task-list {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.task-list table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-list th,
+.task-list td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-list tr.completed td {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.calendar-flex {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.calendar-flex .card,
+.calendar-flex #dettagliEvento {
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.selected-day {
+  background-color: #ddd !important;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+  .calendar-toolbar .current-month {
+    font-size: 16px;
+  }
+
+  .calendar-toolbar button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  #dettagliEvento input[type="text"],
+  #dettagliEvento input[type="time"] {
+    width: 100%;
+  }
+}
+
+
+
+
+.month-day,
+.has-event,
+.selected-day {
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.month-day:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+.has-event {
+  background-color: #ffdd57;
+  color: #000;
+}
+
+.month-day,
+.btn,
+#dettagliEvento button {
+  cursor: pointer;
+}
+
+
+
+
+
+#dettagliEvento {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+td input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.task-list tr.completed {
+  background-color: #f0f0f0;
+  color: #999;
+  text-decoration: line-through;
+}
+
+
+
+
