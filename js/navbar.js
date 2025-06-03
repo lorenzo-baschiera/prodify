@@ -3,7 +3,7 @@ function generaHeader() {
     <header class="main-header">
       <div id="menuTitolo" class="logo">
         <div id="logoTitolo">
-          <img src="../immagini/logo.PNG" alt="Prodify" height="40">
+          <img src="immagini/logo.PNG" alt="Prodify" height="40">
           <h1 id="titolo">Prodify</h1>
         </div>
         <nav id="menu">
